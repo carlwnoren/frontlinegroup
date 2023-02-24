@@ -6,11 +6,12 @@
 <?import javafx.scene.control.Button?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.frontline.quevie.QuevieController">
+      fx:controller="com.frontline.quevie.userinterface.HomeController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Button id="queueButton" fx:id="queueButton" onAction="#onQueueButtonClick" text="My Movie Queue"/>
+
+    <Button id="searchButton" fx:id="searchButton" onAction="#onSearchButtonClick" text="Search for a Movie"/>
 </VBox>

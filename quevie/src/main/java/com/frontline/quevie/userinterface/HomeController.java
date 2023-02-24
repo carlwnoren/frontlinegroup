@@ -11,19 +11,19 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeScreen {
+public class HomeController {
     @FXML
-    private Button searchButton = new Button();
+    private Button searchButton;
 
     @FXML
-    private Button queueButton = new Button();
+    private Button queueButton;
 
     @FXML
     protected void onQueueButtonClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("queue-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 420);
 
-        ((Stage)queueButton.getScene().getWindow()).getScene();
+        ((Stage)queueButton.getScene().getWindow()).setScene(scene);
     }
 
     @FXML
@@ -31,6 +31,6 @@ public class HomeScreen {
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("search-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 420);
 
-        ((Stage)searchButton.getScene().getWindow()).getScene();
+        ((Stage)searchButton.getScene().getWindow()).setScene(scene);
     }
 }
