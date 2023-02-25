@@ -63,7 +63,8 @@ class MovieFormatCell extends ListCell<Movie> {
 
     public MovieFormatCell() {    }
 
-    @Override protected void updateItem(Movie item, boolean empty) {
+    @Override
+    protected void updateItem(Movie item, boolean empty) {
         // calling super here is very important - don't skip this!
         super.updateItem(item, empty);
         setText(item == null ? "" : item.getTitle() + " (" + item.getYearMade() + ")");
