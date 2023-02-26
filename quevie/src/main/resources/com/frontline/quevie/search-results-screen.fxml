@@ -14,6 +14,6 @@
     </padding>
     <Button fx:id="homeButton" onAction="#onHomeButtonClick" text="Home"/>
     <Button fx:id="backButton" onAction="#onBackButtonClick" text="Back"/>
-    <ListView fx:id="results">
+    <ListView fx:id="results" onMouseClicked="#handleResultClick">
     </ListView>
 </VBox>

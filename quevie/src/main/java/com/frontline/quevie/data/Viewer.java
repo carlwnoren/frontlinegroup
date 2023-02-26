@@ -17,4 +17,8 @@ public class Viewer {
     public MovieQueue getQueue() {
         return queue;
     }
+
+    public void addMovieToQueue(Movie movie) {
+        queue.addMovie(movie);
+    }
 }

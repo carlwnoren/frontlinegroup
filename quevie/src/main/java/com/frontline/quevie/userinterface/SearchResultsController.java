@@ -9,11 +9,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Cell;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -25,10 +25,13 @@ import java.util.ResourceBundle;
 public class SearchResultsController {
     private ObservableList<Movie> searchResults = FXCollections.observableArrayList(MovieDatabase.getInstance().getSearchResults());
     @FXML
-    private Button backButton;
-
-    @FXML
     private ListView results;
+    Movie selectedMovie;
+    @FXML
+    private Button backButton;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     protected void initialize() {
@@ -56,11 +59,22 @@ public class SearchResultsController {
         ((Stage)backButton.getScene().getWindow()).setScene(scene);
     }
 
+    public void handleResultClick(MouseEvent mouseEvent) throws IOException{
+        selectedMovie = (Movie)results.getSelectionModel().getSelectedItem();
+        FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("searched-movie-screen.fxml"));
+        root = fxmlLoader.load();
 
+        SearchedMovieController searchedMovieController = fxmlLoader.getController();
+        searchedMovieController.loadMovie(selectedMovie);
+
+        stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 
 class MovieFormatCell extends ListCell<Movie> {
-
     public MovieFormatCell() {    }
 
     @Override
