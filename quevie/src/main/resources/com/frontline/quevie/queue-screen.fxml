@@ -13,5 +13,5 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
     <Button fx:id="homeButton" onAction="#onHomeButtonClick" text="Home"/>
-    <ListView fx:id="queueItems"></ListView>
+    <ListView fx:id="queueItems" onMouseClicked="#handleResultClick"></ListView>
 </VBox>

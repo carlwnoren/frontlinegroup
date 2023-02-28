@@ -1,6 +1,11 @@
 package com.frontline.quevie.data;
 
 public class Review {
+    public Review(Movie movie, int rating, String reviewText) {
+        this.movie = movie;
+        this.rating = rating;
+        this.reviewText = reviewText;
+    }
     private Viewer viewer;
     private Movie movie;
     private int rating;
