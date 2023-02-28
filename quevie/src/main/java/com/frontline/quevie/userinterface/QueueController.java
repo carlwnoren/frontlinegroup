@@ -8,15 +8,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class QueueController {
     private ObservableList<Movie> queue = FXCollections.observableArrayList(QuevieApplication.getViewer().getQueue().getQueue());
@@ -24,6 +24,10 @@ public class QueueController {
     ListView queueItems;
     @FXML
     private Button homeButton;
+    Movie selectedQueueMovie;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     protected void initialize() {
@@ -41,6 +45,20 @@ public class QueueController {
         Scene scene = new Scene(fxmlLoader.load());
 
         ((Stage) homeButton.getScene().getWindow()).setScene(scene);
+    }
+
+    public void handleResultClick(MouseEvent mouseEvent) throws IOException {
+        selectedQueueMovie = (Movie)queueItems.getSelectionModel().getSelectedItem();
+        FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("selected-queue-movie-screen.fxml"));
+        root = fxmlLoader.load();
+
+        SelectedQueueMovieController selectedQueueMovieController = fxmlLoader.getController();
+        selectedQueueMovieController.loadMovie(selectedQueueMovie);
+
+        stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     class QueueFormatCell extends ListCell<Movie> {
