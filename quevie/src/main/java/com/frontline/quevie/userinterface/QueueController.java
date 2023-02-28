@@ -37,6 +37,7 @@ public class QueueController {
                 return new MovieFormatCell();
             }
         });
+
     }
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
