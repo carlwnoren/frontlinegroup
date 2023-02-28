@@ -25,8 +25,8 @@ public class QuevieApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
+
         MovieDatabase database = MovieDatabase.getInstance();
         ArrayList<String> cast = new ArrayList<String>();
         viewer = new Viewer ("iLuvMovies99", "12345");

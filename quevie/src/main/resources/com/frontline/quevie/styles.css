@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+VBox {
+    -fx-background-color: #83C5BE;
+
+
+}
+
+#labels {
+-fx-alignment: center;}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-font-size: 20px;
+    -fx-text-fill: #006D77;
+    -fx-font-family: 'Quicksand', serif;
+}
+
+.button:hover {
+  -fx-text-fill: #EDF6F9;
+}
+
+.label {
+    -fx-font-size: 20px;
+    -fx-text-fill: #FFDDD2;
+
+}
+
+.list-cell {
+    -fx-font-family: 'Quicksand';
+    -fx-background-color: #83C5BE;
+    -fx-border: none;
+    -fx-font-size: 15px;
+}
+
+.list-view {
+   -fx-background-insets: 0;
+    -fx-padding: 0;}
+
+#addToQueueButton {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
