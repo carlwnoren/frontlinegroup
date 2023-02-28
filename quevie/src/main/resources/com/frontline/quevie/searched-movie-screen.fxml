@@ -9,13 +9,16 @@
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.frontline.quevie.userinterface.SearchedMovieController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="600.0"
+            stylesheets="@styles.css">
     <Button fx:id="backButton" text="Back" onAction="#onBackButtonClick"/>
     <Button fx:id="homeButton" text="Home" onAction="#onHomeButtonClick"/>
+    <VBox fx:id="labels">
     <Label fx:id="titleLabel"/>
     <Label fx:id="yearMadeLabel"/>
     <Label fx:id="genreLabel"/>
     <Label fx:id="directorLabel"/>
     <Label fx:id="castLabel"/>
     <Button fx:id="addToQueueButton" text="AddToQueue" onAction="#onAddToQueueClick"/>
+    </VBox>
 </VBox>
