@@ -35,4 +35,17 @@ public class Movie {
     public ArrayList<String> getCast() {
         return cast;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+
+        if (!(o instanceof Movie))
+            return false;
+
+        Movie movie = (Movie) o;
+
+        return (movie.getTitle().equals(title) && movie.getYearMade().equals(yearMade));
+    }
 }

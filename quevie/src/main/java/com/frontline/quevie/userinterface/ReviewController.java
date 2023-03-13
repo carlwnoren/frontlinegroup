@@ -20,6 +20,7 @@ import java.io.IOException;
 
 public class ReviewController {
     private Movie movie;
+    private Review review;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -36,7 +37,7 @@ public class ReviewController {
     @FXML
     private Button cancelButton;
 
-    public void loadMovie(Movie movie) {
+    public void loadReviewScreen(Movie movie, Review review) {
         this.movie = movie;
         this.titleYear.setText(movie.getTitle() + "(" + movie.getYearMade() + ")");
         //Adds character counter
@@ -56,11 +57,21 @@ public class ReviewController {
                 }
             }
         });
+        if(review != null) {
+            this.review = review;
+            rating.setText(Integer.toString(review.getRating()));
+            reviewText.setText(review.getReviewText());
+        }
     }
 
     public void onSaveReviewButtonClick(ActionEvent actionEvent) throws IOException {
-        Review review = new Review(movie, Integer.parseInt(rating.getText()), reviewText.getText());
-        QuevieApplication.getViewer().addReview(review);
+        if (review == null) {
+            review = new Review(movie, Integer.parseInt(rating.getText()), reviewText.getText());
+            QuevieApplication.getViewer().addReview(review);
+        } else {
+            review.setRating(Integer.parseInt(rating.getText()));
+            review.setReviewText(reviewText.getText());
+        }
 
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("selected-queue-movie-screen.fxml"));
         root = fxmlLoader.load();

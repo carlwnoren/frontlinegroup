@@ -26,4 +26,12 @@ public class Review {
     public String getReviewText() {
         return reviewText;
     }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setReviewText(String text) {
+        reviewText = text;
+    }
 }

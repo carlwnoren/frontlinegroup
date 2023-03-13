@@ -28,7 +28,17 @@ public class Viewer {
         queue.addMovie(movie);
     }
 
-    public void addReview (Review review) {
+    public void addReview(Review review) {
         reviews.add(review);
+    }
+
+    public Review getReview(Movie movie) {
+        Review currentReview;
+        for (int i = 0; i < reviews.size(); i++) {
+            currentReview = reviews.get(i);
+            if (currentReview.getMovie().equals(movie))
+                return currentReview;
+        }
+        return null;
     }
 }

@@ -34,6 +34,11 @@ public class QuevieApplication extends Application {
         cast.add("Tom Hardy");
         cast.add("Nicholas Hoult");
         database.addMovie("Mad Max: Fury Road", "2015", "Action", "George Miller", cast);
+        cast = new ArrayList<String>();
+        cast.add("Shia LaBeouf");
+        cast.add("Brad Pitt");
+        cast.add("Jon Bernthal");
+        database.addMovie("Fury", "2014", "Action", "David Ayer", cast);
 
         launch();
     }

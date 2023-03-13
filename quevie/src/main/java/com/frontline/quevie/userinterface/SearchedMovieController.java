@@ -43,6 +43,7 @@ public class SearchedMovieController {
         for(int i = 1; i < movie.getCast().size(); i++) {
             castString.append(", " + movie.getCast().get(i));
         }
+        castLabel.setText(castString.toString());
     }
 
     public void onAddToQueueClick(ActionEvent actionEvent) {

@@ -2,6 +2,7 @@ package com.frontline.quevie.userinterface;
 
 import com.frontline.quevie.QuevieApplication;
 import com.frontline.quevie.data.Movie;
+import com.frontline.quevie.data.Review;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ import java.io.IOException;
 
 public class SelectedQueueMovieController {
     private Movie movie;
+    private Review review;
     @FXML
     Button backButton;
     @FXML
@@ -47,6 +49,11 @@ public class SelectedQueueMovieController {
         for(int i = 1; i < movie.getCast().size(); i++) {
             castString.append(", " + movie.getCast().get(i));
         }
+        castLabel.setText(castString.toString());
+        this.review = QuevieApplication.getViewer().getReview(movie);
+        if (review != null) {
+            reviewButton.setText("Edit Review");
+        }
     }
 
     @FXML
@@ -69,7 +76,7 @@ public class SelectedQueueMovieController {
         root = fxmlLoader.load();
 
         ReviewController reviewController = fxmlLoader.getController();
-        reviewController.loadMovie(movie);
+        reviewController.loadReviewScreen(movie, review);
 
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
