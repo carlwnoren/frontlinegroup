@@ -32,6 +32,9 @@ public class SearchedMovieController {
     @FXML
     Button addToQueueButton;
 
+    /*Load data on the given movie, called by the previous screen
+    sets various text fields on the screen based on the movie data.
+     */
     public void loadMovie(Movie movie) {
         this.movie = movie;
         titleLabel.setText(movie.getTitle());
@@ -48,15 +51,17 @@ public class SearchedMovieController {
 
     public void onAddToQueueClick(ActionEvent actionEvent) {
         QuevieApplication.getViewer().addMovieToQueue(movie);
+        /* Change button text and disable button action to prevent movie being added
+        multiple times */
         addToQueueButton.setText("Movie Added to Queue");
         addToQueueButton.setOnAction(null);
-        for(int i = 0; i < QuevieApplication.getViewer().getQueue().getQueue().size(); i++) {
-        }
+        //Save the data, since change to queue was made.
         QuevieApplication.getViewer().saveData();
     }
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
+        //Load next screen and switch over
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("search-results-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
@@ -64,6 +69,7 @@ public class SearchedMovieController {
     }
 
     public void onHomeButtonClick(ActionEvent actionEvent) throws IOException{
+        //Load next screen and switch over
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("home-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 

@@ -1,4 +1,10 @@
+/**
+ * This implements a Review object, tied to a viewer and movie, that
+ * keeps the rating and review text set by the viewer.
+ */
 package com.frontline.quevie.data;
+
+import com.frontline.quevie.QuevieApplication;
 
 import java.io.Serializable;
 
@@ -7,6 +13,7 @@ public class Review implements Serializable {
         this.movie = movie;
         this.rating = rating;
         this.reviewText = reviewText;
+        this.viewer = QuevieApplication.getViewer();
     }
     private Viewer viewer;
     private Movie movie;

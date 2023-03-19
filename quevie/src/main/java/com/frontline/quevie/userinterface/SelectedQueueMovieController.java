@@ -38,6 +38,7 @@ public class SelectedQueueMovieController {
     private Scene scene;
     private Parent root;
 
+    //Load movie from previous screen
     public void loadMovie(Movie movie) {
         this.movie = movie;
         titleLabel.setText(movie.getTitle());
@@ -50,7 +51,9 @@ public class SelectedQueueMovieController {
             castString.append(", " + movie.getCast().get(i));
         }
         castLabel.setText(castString.toString());
+        //Load review from the user for this movie
         this.review = QuevieApplication.getViewer().getReview(movie);
+        //If review exists in user for this movie, change text of the button
         if (review != null) {
             reviewButton.setText("Edit Review");
         }
@@ -58,6 +61,7 @@ public class SelectedQueueMovieController {
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
+        //Load and transition to queue screen
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("queue-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
@@ -65,6 +69,7 @@ public class SelectedQueueMovieController {
     }
 
     public void onHomeButtonClick(ActionEvent actionEvent) throws IOException{
+        //Load and transition to home screen
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("home-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
@@ -72,12 +77,15 @@ public class SelectedQueueMovieController {
     }
 
     public void onReviewClick(ActionEvent actionEvent) throws IOException {
+        //Load Review Screen doc
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("review-screen.fxml"));
         root = fxmlLoader.load();
 
+        //Instantiate review screen's controller and load movie and review data into the next screen
         ReviewController reviewController = fxmlLoader.getController();
         reviewController.loadReviewScreen(movie, review);
 
+        //Transition to review screen
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

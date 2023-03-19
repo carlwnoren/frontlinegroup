@@ -25,6 +25,7 @@ public class SearchController {
 
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
+        //Load then transition to next screen
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("home-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
@@ -32,7 +33,10 @@ public class SearchController {
     }
 
     public void onPerformSearchClick(ActionEvent actionEvent) throws IOException{
+        //Get the text field info, search the database with that
         MovieDatabase.getInstance().searchMoviesByTitle(titleSearch.getText());
+
+        //Load then transition to next screen
 
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("search-results-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

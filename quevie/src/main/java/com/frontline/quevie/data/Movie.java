@@ -1,3 +1,8 @@
+/**
+ * This class implements a Movie object. It stores basic information on a movie
+ * and checks for equality based on the matching title and year made.
+ */
+
 package com.frontline.quevie.data;
 
 import java.io.Serializable;
@@ -37,6 +42,7 @@ public class Movie implements Serializable {
         return cast;
     }
 
+    //Returns equality check based on year made and title.
     @Override
     public boolean equals(Object o) {
         if (o == this)

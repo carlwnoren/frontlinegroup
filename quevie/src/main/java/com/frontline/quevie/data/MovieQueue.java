@@ -1,3 +1,6 @@
+/**
+ * This implements the MovieQueue, the list of movies a viewer has saved to watch later.
+ */
 package com.frontline.quevie.data;
 
 import java.io.Serializable;

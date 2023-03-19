@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.util.ArrayList;
 
-public class QuevieApplication extends Application implements Serializable {
+public class QuevieApplication extends Application {
 
     private static Viewer viewer;
 
@@ -18,19 +18,21 @@ public class QuevieApplication extends Application implements Serializable {
         return viewer;
     }
 
+    //Load initial screen setup
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("home-screen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240); //initial screen size set here
         stage.setTitle("Quevie");
         stage.setScene(scene);
         stage.show();
     }
     public static void main(String[] args) {
-
+        //Set up the database
         MovieDatabase database = MovieDatabase.getInstance();
-        ArrayList<String> cast = new ArrayList<String>();
+        //Set the viewer
         viewer = new Viewer ("iLuvMovies99", "12345");
+        //Load/deserialize viewer data, if it exists.
         if (new File(viewer.getUsername() + ".ser").isFile()) {
             try {
                 FileInputStream fileIn = new FileInputStream(viewer.getUsername() + ".ser");
@@ -42,6 +44,8 @@ public class QuevieApplication extends Application implements Serializable {
                 cnfe.printStackTrace();
             }
         }
+        //Set up dummy movies.
+        ArrayList<String> cast = new ArrayList<String>();
         cast.add("Charlize Theron");
         cast.add("Tom Hardy");
         cast.add("Nicholas Hoult");

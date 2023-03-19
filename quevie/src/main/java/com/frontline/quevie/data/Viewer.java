@@ -1,3 +1,8 @@
+/**
+ * This implements a Viewer object, this application's "user."
+ * This class is the root of serialization and has a list of reviews, as well as a movie queue.
+ */
+
 package com.frontline.quevie.data;
 
 import java.io.FileOutputStream;
@@ -24,6 +29,7 @@ public class Viewer implements Serializable {
         return username;
     }
 
+    //Returns the queue object, to get the actual list of movies, call the object's getQueue() method
     public MovieQueue getQueue() {
         return queue;
     }
@@ -36,6 +42,7 @@ public class Viewer implements Serializable {
         reviews.add(review);
     }
 
+    //Returns null if no review for the given movie or the matching review
     public Review getReview(Movie movie) {
         Review currentReview;
         for (int i = 0; i < reviews.size(); i++) {
@@ -46,6 +53,9 @@ public class Viewer implements Serializable {
         return null;
     }
 
+    /*Serializes the data. Make sure to call after each change
+    to queues, reviews, or user data.
+     */
     public void saveData() {
         try {
             FileOutputStream fileOut = new FileOutputStream(username + ".ser");

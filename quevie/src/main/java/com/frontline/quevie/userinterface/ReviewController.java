@@ -37,13 +37,14 @@ public class ReviewController {
     @FXML
     private Button cancelButton;
 
+    //Loads in the movie from the SelectedQueueMovieScreen/Controller
     public void loadReviewScreen(Movie movie, Review review) {
         this.movie = movie;
         this.titleYear.setText(movie.getTitle() + "(" + movie.getYearMade() + ")");
         //Adds character counter
         reviewCharCounter.textProperty().bind(reviewText.textProperty().length().asString("Characters: %d"));
         rating.textProperty().addListener(new ChangeListener<String>() {
-            @Override//Constrains the rating to 1-5 int value
+            @Override//Constrains the rating to 1-5 int value, does not allow anything else to be typed in
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 if (t1.matches("")) {
 
@@ -57,6 +58,10 @@ public class ReviewController {
                 }
             }
         });
+        /*
+        If a review already exists for this movie,
+        set the rating and review to match the existing review.
+         */
         if(review != null) {
             this.review = review;
             rating.setText(Integer.toString(review.getRating()));
@@ -65,17 +70,19 @@ public class ReviewController {
     }
 
     public void onSaveReviewButtonClick(ActionEvent actionEvent) throws IOException {
-        if (review == null) {
+        if (review == null) { //If no review exists for this movie, create a new one
             review = new Review(movie, Integer.parseInt(rating.getText()), reviewText.getText());
             QuevieApplication.getViewer().addReview(review);
-        } else {
+        } else { //Otherwise, update existing review
             review.setRating(Integer.parseInt(rating.getText()));
             review.setReviewText(reviewText.getText());
         }
 
+        //Load next screen
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("selected-queue-movie-screen.fxml"));
         root = fxmlLoader.load();
 
+        //Instantiate next screen's controller, load the movie data into it
         SelectedQueueMovieController selectedQueueMovieController = fxmlLoader.getController();
         selectedQueueMovieController.loadMovie(movie);
 
@@ -83,13 +90,16 @@ public class ReviewController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        //Serialize the data
         QuevieApplication.getViewer().saveData();
     }
 
     public void onCancelButtonClick(ActionEvent actionEvent) throws IOException {
+        //Load next screen
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("selected-queue-movie-screen.fxml"));
         root = fxmlLoader.load();
 
+        //Instantiate next screen's controller, load the movie data into it
         SelectedQueueMovieController selectedQueueMovieController = fxmlLoader.getController();
         selectedQueueMovieController.loadMovie(movie);
 
