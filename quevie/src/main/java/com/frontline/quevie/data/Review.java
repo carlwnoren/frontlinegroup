@@ -1,6 +1,8 @@
 package com.frontline.quevie.data;
 
-public class Review {
+import java.io.Serializable;
+
+public class Review implements Serializable {
     public Review(Movie movie, int rating, String reviewText) {
         this.movie = movie;
         this.rating = rating;

@@ -1,9 +1,13 @@
 package com.frontline.quevie.data;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Viewer {
+public class Viewer implements Serializable {
     public Viewer(String username, String password) {
         this.username = username;
         this.password = password;
@@ -40,5 +44,15 @@ public class Viewer {
                 return currentReview;
         }
         return null;
+    }
+
+    public void saveData() {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(username + ".ser");
+            ObjectOutputStream output = new ObjectOutputStream(fileOut);
+            output.writeObject(this);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 }

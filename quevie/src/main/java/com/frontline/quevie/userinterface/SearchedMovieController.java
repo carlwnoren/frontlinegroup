@@ -51,8 +51,8 @@ public class SearchedMovieController {
         addToQueueButton.setText("Movie Added to Queue");
         addToQueueButton.setOnAction(null);
         for(int i = 0; i < QuevieApplication.getViewer().getQueue().getQueue().size(); i++) {
-        System.out.println(QuevieApplication.getViewer().getQueue().getQueue().get(0).getTitle());
         }
+        QuevieApplication.getViewer().saveData();
     }
 
     @FXML

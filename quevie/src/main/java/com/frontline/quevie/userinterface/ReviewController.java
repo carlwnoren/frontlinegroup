@@ -83,6 +83,7 @@ public class ReviewController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        QuevieApplication.getViewer().saveData();
     }
 
     public void onCancelButtonClick(ActionEvent actionEvent) throws IOException {

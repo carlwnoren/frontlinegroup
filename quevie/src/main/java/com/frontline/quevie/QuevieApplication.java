@@ -7,10 +7,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
-public class QuevieApplication extends Application {
+public class QuevieApplication extends Application implements Serializable {
+
     private static Viewer viewer;
 
     public static Viewer getViewer() {
@@ -30,6 +31,17 @@ public class QuevieApplication extends Application {
         MovieDatabase database = MovieDatabase.getInstance();
         ArrayList<String> cast = new ArrayList<String>();
         viewer = new Viewer ("iLuvMovies99", "12345");
+        if (new File(viewer.getUsername() + ".ser").isFile()) {
+            try {
+                FileInputStream fileIn = new FileInputStream(viewer.getUsername() + ".ser");
+                ObjectInputStream input = new ObjectInputStream(fileIn);
+                viewer = (Viewer) input.readObject();
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            } catch (ClassNotFoundException cnfe) {
+                cnfe.printStackTrace();
+            }
+        }
         cast.add("Charlize Theron");
         cast.add("Tom Hardy");
         cast.add("Nicholas Hoult");

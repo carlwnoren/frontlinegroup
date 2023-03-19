@@ -1,10 +1,11 @@
 package com.frontline.quevie.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MovieDatabase {
+public class MovieDatabase implements Serializable {
     private MovieDatabase() {
     }
     private List<Movie> searchResults;

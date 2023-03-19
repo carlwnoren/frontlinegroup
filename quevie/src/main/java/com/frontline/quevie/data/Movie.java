@@ -1,8 +1,9 @@
 package com.frontline.quevie.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Movie {
+public class Movie implements Serializable {
     public Movie(String title, String yearMade, String genre, String director, ArrayList<String> cast) {
         this.title = title;
         this.yearMade = yearMade;
