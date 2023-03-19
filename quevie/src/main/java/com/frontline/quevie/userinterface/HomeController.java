@@ -20,21 +20,18 @@ public class HomeController {
 
     @FXML
     protected void onQueueButtonClick(ActionEvent actionEvent) throws IOException {
-        //Load the FXML doc for the queue screen
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("queue-screen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 420); //set the scene to the next screen, set screen size
+        Scene scene = new Scene(fxmlLoader.load());
 
-        //Move to the next screen
         ((Stage)queueButton.getScene().getWindow()).setScene(scene);
     }
 
     @FXML
     protected void onSearchButtonClick(ActionEvent actionEvent) throws IOException{
-        //Load the FXML doc for the queue screen
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("search-screen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 420);
+        Scene scene = new Scene(fxmlLoader.load());
 
-        //Move to the next screen
+
         ((Stage)searchButton.getScene().getWindow()).setScene(scene);
     }
 }

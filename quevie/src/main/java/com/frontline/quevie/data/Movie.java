@@ -7,6 +7,8 @@ package com.frontline.quevie.data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import javafx.scene.image.Image;
+
 
 public class Movie implements Serializable {
     public Movie(String title, String yearMade, String genre, String director, ArrayList<String> cast) {

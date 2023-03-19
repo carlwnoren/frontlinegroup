@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="javafx.controls">
     <CLASSES>
-      <root url="jar://$USER_HOME$/javafx-sdk-19.0.2.1 2/lib/javafx.controls.jar!/" />
+      <root url="file://$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-19.0.2" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-19.0.2" recursive="false" />
   </library>
 </component>

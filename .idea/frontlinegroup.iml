@@ -3,8 +3,9 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="openjdk-19" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="openjfx.javafx.swing" level="project" />
+    <orderEntry type="library" exported="" name="openjfx.javafx.swing" level="project" />
+    <orderEntry type="library" name="openjfx.javafx.swing1" level="project" />
   </component>
 </module>

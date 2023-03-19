@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import javafx.scene.image.Image;
 
 public class MovieDatabase implements Serializable {
     private MovieDatabase() { //private constructor for singleton implementation

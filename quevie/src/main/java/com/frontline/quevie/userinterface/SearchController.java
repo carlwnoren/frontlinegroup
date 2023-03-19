@@ -30,6 +30,8 @@ public class SearchController {
         Scene scene = new Scene(fxmlLoader.load());
 
         ((Stage) homeButton.getScene().getWindow()).setScene(scene);
+
+
     }
 
     public void onPerformSearchClick(ActionEvent actionEvent) throws IOException{
