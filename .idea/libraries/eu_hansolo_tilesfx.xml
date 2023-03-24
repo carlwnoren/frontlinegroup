@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="eu.hansolo.tilesfx" type="repository">
+    <properties maven-id="eu.hansolo:tilesfx:17.1.9" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/tilesfx-17.1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-base-17.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-base-17.0.2-mac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-graphics-17.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-graphics-17.0.2-mac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-controls-17.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-controls-17.0.2-mac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-swing-17.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-swing-17.0.2-mac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-web-17.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-web-17.0.2-mac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-media-17.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-media-17.0.2-mac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/toolbox-17.0.22.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/toolboxfx-17.0.28.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/heatmap-17.0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/countries-17.0.22.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

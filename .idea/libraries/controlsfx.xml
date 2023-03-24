@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="controlsfx" type="repository">
+    <properties maven-id="org.controlsfx:controlsfx:11.1.2">
+      <exclude>
+        <dependency maven-id="org.controlsfx:controlsfx" />
+      </exclude>
+    </properties>
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="kordamp.bootstrapfx.core" type="repository">
+    <properties maven-id="org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/kordamp/bootstrapfx/bootstrapfx-core/0.4.0/bootstrapfx-core-0.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
