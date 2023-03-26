@@ -7,10 +7,9 @@ package com.frontline.quevie.data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Movie implements Serializable {
-    public Movie(String title, String yearMade, String genre, String director, List<String> cast) {
+    public Movie(String title, String yearMade, String genre, String director, ArrayList<String> cast) {
         this.title = title;
         this.yearMade = yearMade;
         this.genre = genre;
@@ -21,7 +20,7 @@ public class Movie implements Serializable {
     private String yearMade;
     private String genre;
     private String director;
-    private List<String> cast;
+    private ArrayList<String> cast;
 
     public String getTitle() {
         return title;
@@ -39,7 +38,7 @@ public class Movie implements Serializable {
         return director;
     }
 
-    public List<String> getCast() {
+    public ArrayList<String> getCast() {
         return cast;
     }
 
