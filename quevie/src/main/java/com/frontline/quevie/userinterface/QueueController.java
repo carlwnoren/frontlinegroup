@@ -49,6 +49,7 @@ public class QueueController {
 
         //Load the home screen
         ((Stage) homeButton.getScene().getWindow()).setScene(scene);
+
     }
 
     //Navigates to the selected queue movie screen when a list item is selected

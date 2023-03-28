@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
@@ -19,6 +21,8 @@ public class SearchedMovieController {
     Button backButton;
     @FXML
     Button homeButton;
+    @FXML
+    Label coverLabel;
     @FXML
     Label titleLabel;
     @FXML
