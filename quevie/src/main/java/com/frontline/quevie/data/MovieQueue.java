@@ -26,4 +26,9 @@ public class MovieQueue implements Serializable {
     public void addMovie(Movie movie) {
         queue.add(movie);
     }
+
+    public void saveData() { viewer.saveData(); }
+
+    public void removeMovie(Movie movie) { queue.remove(movie); saveData();}
 }
+
