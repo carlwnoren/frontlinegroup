@@ -15,6 +15,9 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
+
 
 import java.io.IOException;
 
@@ -32,24 +35,23 @@ public class QueueController {
 
     @FXML
     protected void initialize() {
-        //Setup for the ListView
+        // Setup for the ListView
         queueItems.setItems(queue);
         queueItems.setCellFactory(new Callback<ListView<Movie>, ListCell<Movie>>() {
             @Override public ListCell<Movie> call(ListView<Movie> list) {
-                return new MovieFormatCell();
+                return new QueueFormatCell();
             }
         });
-
     }
+
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
         //Load home screen
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("home-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load()); //set the scene to the home screen
-
+        scene.getStylesheets().add(QuevieApplication.class.getResource("styles.css").toExternalForm());
         //Load the home screen
         ((Stage) homeButton.getScene().getWindow()).setScene(scene);
-
     }
 
     //Navigates to the selected queue movie screen when a list item is selected
@@ -73,13 +75,43 @@ public class QueueController {
 
     //Sets the data for each line of the list
     class QueueFormatCell extends ListCell<Movie> {
-        public QueueFormatCell() {   }
+        private Button removeButton;
+        private HBox content;
+        private Text movieTitle;
+
+        public QueueFormatCell() {
+            removeButton = new Button("Remove");
+            removeButton.getStyleClass().add("remove-button");
+            content = new HBox();
+            movieTitle = new Text();
+            content.getChildren().addAll(movieTitle, removeButton);
+        }
 
         @Override
         protected void updateItem(Movie item, boolean empty) {
-            //calling the superclass
+            // calling the superclass
             super.updateItem(item, empty);
-            setText(item == null ? "" : item.getTitle() + " (" + item.getYearMade() + ")");
+            if (item == null || empty) {
+                setText(null);
+                setGraphic(null);
+            } else {
+                movieTitle.setText(item.getTitle() + " (" + item.getYearMade() + ")");
+                removeButton.setOnAction(event -> {
+                    getListView().getItems().remove(item);
+                    QuevieApplication.getViewer().getQueue().removeMovie(item);
+                });
+                setGraphic(content);
+            }
         }
     }
+
+    public void removeSelectedMovie() {
+        if (selectedQueueMovie != null) {
+            QuevieApplication.getViewer().getQueue().removeMovie(selectedQueueMovie);
+            // Refresh the queue ListView
+            queue.remove(selectedQueueMovie);
+        }
+    }
+
 }
+
