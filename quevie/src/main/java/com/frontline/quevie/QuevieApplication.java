@@ -18,16 +18,19 @@ public class QuevieApplication extends Application {
         return viewer;
     }
 
+
+    //Load initial screen setup
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("home-screen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 390, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 390, 800); //initial screen size set her
         stage.setTitle("Quevie");
         stage.setScene(scene);
         stage.show();
     }
+    //Set up the database
     public static void main(String[] args) {
-
+//              set up dummy movies
         MovieDatabase database = MovieDatabase.getInstance();
         ArrayList<String> cast = new ArrayList<String>();
         viewer = new Viewer ("iLuvMovies99", "12345");
