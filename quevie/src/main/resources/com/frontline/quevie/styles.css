@@ -34,6 +34,8 @@ VBox {
 .label {
     -fx-font-size: 20px;
     -fx-text-fill: #FFDDD2;
+    -fx-font-weight: 500;
+        -fx-font-family: 'Quicksand', serif;
 
 }
 
@@ -49,7 +51,8 @@ VBox {
     -fx-padding: 0;}
 
 #addToQueueButton {
-    -fx-font-size: 15px;
+    -fx-padding: 20px;
+    -fx-font-size: 17px;
     -fx-font-weight: bold;
 }
 
@@ -63,3 +66,7 @@ VBox {
 .ListView {
 -fx-font-size: 15px;
 -fx-text-weight: 600}
+
+.remove-button {
+ -fx-font-size:15px;
+ }
