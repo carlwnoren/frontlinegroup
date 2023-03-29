@@ -9,7 +9,7 @@
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.frontline.quevie.userinterface.ReviewController"
-      prefHeight="600" prefWidth="320"
+      prefHeight="700" prefWidth="400"
       stylesheets="@styles.css">
     <Label fx:id="titleYear"/>
     <HBox>
