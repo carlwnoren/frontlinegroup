@@ -76,7 +76,7 @@ public class SelectedQueueMovieController {
         root = fxmlLoader.load();
 
         ReviewController reviewController = fxmlLoader.getController();
-        reviewController.loadReviewScreen(movie,QuevieApplication.getViewer().getReview(movie));
+        reviewController.loadMovie(movie);
         //Instantiate review screen's controller and load movie and review data into the next screen
        ReviewController reviewController = fxmlLoader.getController();
        reviewController.loadReviewScreen(movie, QuevieApplication.getViewer().getReview(movie));
