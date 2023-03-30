@@ -80,7 +80,7 @@ public class SelectedQueueMovieController {
         root = fxmlLoader.load();
 
         ReviewController reviewController = fxmlLoader.getController();
-        reviewController.loadMovie(movie);
+        reviewController.loadReviewScreen(movie,QuevieApplication.getViewer().getReview(movie));
 
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
