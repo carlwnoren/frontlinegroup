@@ -22,7 +22,7 @@ class MovieQueueTest {
     }
 
     @Test
-    void getQueue() {
+    void getQueue() {assertSame(viewer,queue.getQueue());
     }
 
     @Test
