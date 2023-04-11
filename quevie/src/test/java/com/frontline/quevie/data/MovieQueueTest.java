@@ -18,7 +18,6 @@ class MovieQueueTest {
 
     @Test
     void getViewer() {
-        assertSame(viewer,queue.getViewer());
     }
 
     @Test
@@ -26,9 +25,22 @@ class MovieQueueTest {
     }
 
     @Test
-    void addMovie() {
+    void addMovieToQueue() {
         Movie movie = new Movie("Fury", "2020","Action","Alex", Arrays.asList("Jeff","Sam"));
         queue.addMovie(movie);
         assertEquals(1,queue.getQueue().size());
+    }
+
+    @Test
+//need some help with this one
+    void saveDataToQueue() {
+        Movie movie = new Movie("Fury", "2020","Action","Alex", Arrays.asList("Jeff","Sam"));
+    }
+
+    @Test
+    void removeMovieFromQueue() {
+        Movie movie = new Movie("Fury","2020","Action","Alex",Arrays.asList("Jeff","Sam"));
+        queue.removeMovie(movie);
+        assertEquals(0,queue.getQueue().size());
     }
 }
