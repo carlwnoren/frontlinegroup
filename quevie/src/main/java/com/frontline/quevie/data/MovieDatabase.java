@@ -29,8 +29,17 @@ public class MovieDatabase implements Serializable {
     public void searchMoviesByTitle(String search) {
         List<Movie> results = new LinkedList<>();
         for (int i = 0; i < movies.size(); i++) {
-            if(movies.get(i).getTitle().toLowerCase().contains(search)) {
+            if(movies.get(i).getTitle().toLowerCase().contains(search.toLowerCase())) {
                 results.add(movies.get(i));
+            }
+        }
+
+        for (int i = 0; i < movies.size(); i++) {
+            for(String actor : movies.get(i).getCast()) {
+                if (actor.toLowerCase().contains(search.toLowerCase())) {
+                    results.add(movies.get(i));
+                    break;
+                }
             }
         }
         searchResults = results;

@@ -1,6 +1,5 @@
 package com.frontline.quevie.data;
 
-import org.controlsfx.control.Rating;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
