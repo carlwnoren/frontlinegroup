@@ -31,7 +31,7 @@ class ReviewTest {
     }
 
     @Test
-    void getRating() {assertEquals(3,3);
+    void getRating() {
     }
 
     @Test

@@ -11,7 +11,7 @@ import java.util.List;
 import javafx.scene.image.Image;
 
 public class MovieDatabase implements Serializable {
-    private MovieDatabase() { //private constructor for singleton implementation
+    MovieDatabase() { //private constructor for singleton implementation
     }
     private static MovieDatabase instance = new MovieDatabase(); //creates a new database object immediately
     public static MovieDatabase getInstance() {
