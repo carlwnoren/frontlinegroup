@@ -1,6 +1,5 @@
 package com.frontline.quevie.data;
 
-import org.controlsfx.control.Rating;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -12,20 +11,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class ReviewTest {
     private static Viewer viewer;
     private static Movie movie;
-    private static Rating  rating;
 
 
     @BeforeAll
-    static void setup (){
-        viewer = new Viewer("Eden","pass");
-        rating = new Rating(5,3);
-
+    static void setup () {
+        viewer = new Viewer("Eden", "pass");
+    }
     @Test
     void getViewer() {
         Viewer viewer = new Viewer("Eden","pass");
-        String person = viewer.getViewer();
+        String person = viewer.getUsername();
         assertEquals("Eden",viewer);
-        }
+
     }
 
     @Test

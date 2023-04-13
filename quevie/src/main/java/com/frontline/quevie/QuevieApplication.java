@@ -41,10 +41,10 @@ public class QuevieApplication extends Application {
 
         MovieDatabase database2 = MovieDatabase.getInstance();
         ArrayList<String> cast2 = new ArrayList<String>();
-        cast.add("Marlon Brando");
-        cast.add("Al Pacino");
-        cast.add("James Caan");
-        database.addMovie("The Godfather", "1972", "Crime/Drama", "Warren Clymer", cast);
+        cast2.add("Marlon Brando");
+        cast2.add("Al Pacino");
+        cast2.add("James Caan");
+        database.addMovie("The Godfather", "1972", "Crime/Drama", "Warren Clymer", cast2);
         launch();
     }
 }
