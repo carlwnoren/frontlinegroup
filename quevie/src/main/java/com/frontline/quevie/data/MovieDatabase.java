@@ -31,10 +31,8 @@ public class MovieDatabase implements Serializable {
         for (int i = 0; i < movies.size(); i++) {
             if(movies.get(i).getTitle().toLowerCase().contains(search.toLowerCase())) {
                 results.add(movies.get(i));
+                continue;
             }
-        }
-
-        for (int i = 0; i < movies.size(); i++) {
             for(String actor : movies.get(i).getCast()) {
                 if (actor.toLowerCase().contains(search.toLowerCase())) {
                     results.add(movies.get(i));
@@ -42,6 +40,8 @@ public class MovieDatabase implements Serializable {
                 }
             }
         }
+
+
         searchResults = results;
     }
 
