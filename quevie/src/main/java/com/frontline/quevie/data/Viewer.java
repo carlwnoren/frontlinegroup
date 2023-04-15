@@ -5,10 +5,8 @@
 
 package com.frontline.quevie.data;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
+import java.nio.channels.FileLockInterruptionException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,6 +61,20 @@ public class Viewer implements Serializable {
             output.writeObject(this);
         } catch (IOException ioe) {
             ioe.printStackTrace();
+        }
+    }
+    public void loadData(){
+        try{
+            FileInputStream fileIn = new FileInputStream(username + ".ser");
+            ObjectInputStream input = new ObjectInputStream(fileIn);
+            Viewer viewer = (Viewer) input.readObject();
+            this.username = viewer.getUsername();
+            this.password = viewer.password;
+            this.queue = viewer.queue;
+            this.reviews = viewer.reviews;
+        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
+        } catch (ClassNotFoundException e) {
         }
     }
 }

@@ -34,6 +34,7 @@ public class QuevieApplication extends Application {
         MovieDatabase database = MovieDatabase.getInstance();
         ArrayList<String> cast = new ArrayList<String>();
         viewer = new Viewer ("iLuvMovies99", "12345");
+        viewer.loadData();
         cast.add("Charlize Theron");
         cast.add("Tom Hardy");
         cast.add("Nicholas Hoult");
