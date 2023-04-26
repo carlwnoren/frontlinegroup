@@ -58,7 +58,6 @@ public class QuevieApplication extends Application {
         cast4.add("Patton Oswalt");
         cast4.add("Lou Romano");
         database.addMovie("Ratatouille","2007","Family/Comedy","Brad Bird",cast4);
-
         launch();
     }
 }
