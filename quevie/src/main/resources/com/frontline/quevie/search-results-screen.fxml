@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.frontline.quevie.userinterface.SearchResultsController"
       stylesheets="@styles.css">
@@ -16,5 +17,11 @@
     <Button fx:id="homeButton" onAction="#onHomeButtonClick" text="Home"/>
     <Button fx:id="backButton" onAction="#onBackButtonClick" text="Back"/>
     <ListView fx:id="results" onMouseClicked="#handleResultClick">
+        <ListCell>
+            <HBox>
+                <ImageView fx:id="posterImageView" fitHeight="50" fitWidth="50" preserveRatio="true"/>
+                <Label fx:id="movieTitleLabel"/>
+            </HBox>
+        </ListCell>
     </ListView>
 </VBox>

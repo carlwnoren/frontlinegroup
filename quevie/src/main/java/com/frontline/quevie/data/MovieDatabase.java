@@ -15,8 +15,14 @@ public class MovieDatabase {
         return instance;
     }
 
+<<<<<<< Updated upstream
     public void addMovie(String title, String yearMade, String genre, String director, ArrayList<String> cast) {
         movies.add(new Movie(title, yearMade, genre, director, cast));
+=======
+    //Manually add a movie to the database (done in the main method)
+    public void addMovie(String cover, String title, String yearMade, String genre, String director, ArrayList<String> cast) {
+        movies.add(new Movie(cover, title, yearMade, genre, director, cast));
+>>>>>>> Stashed changes
     }
     public void searchMoviesByTitle(String search) {
         List<Movie> results = new LinkedList<>();

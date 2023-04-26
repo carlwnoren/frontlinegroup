@@ -16,6 +16,8 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -75,12 +77,25 @@ public class SearchResultsController {
 }
 
 class MovieFormatCell extends ListCell<Movie> {
+    private ImageView imageView = new ImageView();
     public MovieFormatCell() {    }
 
     @Override
     protected void updateItem(Movie item, boolean empty) {
         // calling super here is very important - don't skip this!
         super.updateItem(item, empty);
+<<<<<<< Updated upstream
         setText(item == null ? "" : item.getTitle() + " (" + item.getYearMade() + ")");
+=======
+
+        if (empty || item == null) {
+            setText(null);
+            setGraphic(null);
+        } else {
+//
+            setText(item.getTitle() + " (" + item.getYearMade() + ")");
+
+        }
+>>>>>>> Stashed changes
     }
 }

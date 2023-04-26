@@ -12,9 +12,13 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class SearchedMovieController {
     private Movie movie;
+    @FXML
+    private ImageView coverImageView;
     @FXML
     Button backButton;
     @FXML
@@ -34,15 +38,21 @@ public class SearchedMovieController {
 
     public void loadMovie(Movie movie) {
         this.movie = movie;
-        titleLabel.setText(movie.getTitle());
-        yearMadeLabel.setText(movie.getYearMade());
-        genreLabel.setText(movie.getGenre());
-        directorLabel.setText(movie.getDirector());
+        Image cover = new Image(getClass().getResource(movie.getCover()).toExternalForm());
+        coverImageView.setImage(cover);
+        titleLabel.setText( movie.getTitle());
+        yearMadeLabel.setText("Year: " + movie.getYearMade());
+        genreLabel.setText("Genre: " + movie.getGenre());
+        directorLabel.setText("Director: " + movie.getDirector());
         StringBuilder castString = new StringBuilder();
         castString.append(movie.getCast().get(0));
         for(int i = 1; i < movie.getCast().size(); i++) {
             castString.append(", " + movie.getCast().get(i));
         }
+<<<<<<< Updated upstream
+=======
+        castLabel.setText("Cast: " + castString.toString());
+>>>>>>> Stashed changes
     }
 
     public void onAddToQueueClick(ActionEvent actionEvent) {

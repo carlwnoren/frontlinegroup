@@ -21,9 +21,14 @@ VBox {
 }
 
 .label {
-    -fx-font-size: 20px;
+    -fx-font-size: 15px;
     -fx-text-fill: #FFDDD2;
 
+}
+
+#titleLabel {
+    -fx-font-size: 30px;
+    -fx-text-fill: #e29578
 }
 
 .list-cell {
@@ -40,4 +45,27 @@ VBox {
 #addToQueueButton {
     -fx-font-size: 15px;
     -fx-font-weight: bold;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+#titleYear {
+-fx-font-size: 2em;
+    -fx-text-fill: #006D77;
+    -fx-text-weight: bold;
+    -fx-font-family: 'Quicksand', serif;
+}
+
+.ListView {
+-fx-font-size: 15px;
+-fx-text-weight: 600}
+
+.remove-button {
+ -fx-font-size:15px;
+ }
+
+ #queueItems {
+   -fx-font-size: 20px;
+   }
+>>>>>>> Stashed changes

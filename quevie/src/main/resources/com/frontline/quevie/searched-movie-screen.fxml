@@ -14,11 +14,12 @@
     <Button fx:id="backButton" text="Back" onAction="#onBackButtonClick"/>
     <Button fx:id="homeButton" text="Home" onAction="#onHomeButtonClick"/>
     <VBox fx:id="labels">
-    <Label fx:id="titleLabel"/>
-    <Label fx:id="yearMadeLabel"/>
+        <ImageView fx:id="coverImageView" fitHeight="400.0" fitWidth="250.0"/>
+        <Label fx:id="titleLabel"/>
+        <Label fx:id="yearMadeLabel"/>
     <Label fx:id="genreLabel"/>
     <Label fx:id="directorLabel"/>
     <Label fx:id="castLabel"/>
-    <Button fx:id="addToQueueButton" text="AddToQueue" onAction="#onAddToQueueClick"/>
+    <Button fx:id="addToQueueButton" text="Add To Queue" onAction="#onAddToQueueClick"/>
     </VBox>
 </VBox>
