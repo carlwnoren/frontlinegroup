@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-package com.frontline.quevie.userinterface;public class SelectedQueueMovieController {
-=======
 package com.frontline.quevie.userinterface;
 
 import com.frontline.quevie.QuevieApplication;
@@ -92,5 +89,4 @@ public class SelectedQueueMovieController {
         stage.setScene(scene);
         stage.show();
     }
->>>>>>> Stashed changes
 }

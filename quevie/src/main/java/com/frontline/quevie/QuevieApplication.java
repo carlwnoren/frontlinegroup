@@ -17,27 +17,29 @@ public class QuevieApplication extends Application {
         return viewer;
     }
 
+
+    //Load initial screen setup
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(QuevieApplication.class.getResource("home-screen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 390, 800); //initial screen size set her
         stage.setTitle("Quevie");
         stage.setScene(scene);
         stage.show();
     }
+    //Set up the database
     public static void main(String[] args) {
-
+//              set up dummy movies
         MovieDatabase database = MovieDatabase.getInstance();
         ArrayList<String> cast = new ArrayList<String>();
         viewer = new Viewer ("iLuvMovies99", "12345");
+        viewer.loadData();
         cast.add("Charlize Theron");
         cast.add("Tom Hardy");
         cast.add("Nicholas Hoult");
-        database.addMovie("/covers/MadMaxCover.jpg", "Mad Max", "2015", "Action", "George Miller", cast);
+        database.addMovie("/covers/MadMaxCover.jpg", "Mad Max: Fury Road", "2015", "Action", "George Miller", cast);
 
-<<<<<<< Updated upstream
-=======
-//        MovieDatabase database2 = MovieDatabase.getInstance();
+//       MovieDatabase database2 = MovieDatabase.getInstance();
         ArrayList<String> cast2 = new ArrayList<String>();
         cast2.add("Marlon Brando");
         cast2.add("Al Pacino");
@@ -56,7 +58,11 @@ public class QuevieApplication extends Application {
         cast4.add("Lou Romano");
         database.addMovie("/covers/RatatouilleCover.jpg", "Ratatouille","2007","Family/Comedy","Brad Bird",cast4);
 
->>>>>>> Stashed changes
+        ArrayList<String> cast5 = new ArrayList<>();
+        cast5.add("Will Arnett");
+        cast5.add("Patton Oswalt");
+        cast5.add("Lou Romano");
+        database.addMovie("/covers/AvatarTheWayofWaterCover.jpg", "Avatar: The Way of Water","2022","Sci-Fi/Adventure","James Cameron",cast5);
         launch();
     }
 }
