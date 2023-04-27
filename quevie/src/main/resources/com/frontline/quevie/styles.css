@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
 
 VBox {
     -fx-background-color: #83C5BE;
@@ -9,10 +10,20 @@ VBox {
 #labels {
 -fx-alignment: center;}
 
-.button {
+#queueButton, #searchButton {
     -fx-background-color: transparent;
-    -fx-font-size: 20px;
+    -fx-font-size: 30px;
     -fx-text-fill: #006D77;
+    -fx-font-weight: 700;
+    -fx-font-family: 'Quicksand', serif;
+    -fx-padding: 30px;
+}
+
+.button {
+-fx-background-color: transparent;
+    -fx-font-size: 2.3em;
+    -fx-text-fill: #006D77;
+    -fx-font-weight: 500;
     -fx-font-family: 'Quicksand', serif;
 }
 
@@ -23,6 +34,8 @@ VBox {
 .label {
     -fx-font-size: 20px;
     -fx-text-fill: #FFDDD2;
+    -fx-font-weight: 500;
+        -fx-font-family: 'Quicksand', serif;
 
 }
 
@@ -38,6 +51,22 @@ VBox {
     -fx-padding: 0;}
 
 #addToQueueButton {
-    -fx-font-size: 15px;
+    -fx-padding: 20px;
+    -fx-font-size: 17px;
     -fx-font-weight: bold;
 }
+
+#titleYear {
+-fx-font-size: 2em;
+    -fx-text-fill: #006D77;
+    -fx-text-weight: bold;
+    -fx-font-family: 'Quicksand', serif;
+}
+
+.ListView {
+-fx-font-size: 15px;
+-fx-text-weight: 600}
+
+.remove-button {
+ -fx-font-size:15px;
+ }

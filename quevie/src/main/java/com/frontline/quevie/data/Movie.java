@@ -1,9 +1,16 @@
+/**
+ * This class implements a Movie object. It stores basic information on a movie
+ * and checks for equality based on the matching title and year made.
+ */
+
 package com.frontline.quevie.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Movie {
-    public Movie(String title, String yearMade, String genre, String director, ArrayList<String> cast) {
+public class Movie implements Serializable {
+    public Movie(String title, String yearMade, String genre, String director, List<String> cast) {
         this.title = title;
         this.yearMade = yearMade;
         this.genre = genre;
@@ -14,7 +21,7 @@ public class Movie {
     private String yearMade;
     private String genre;
     private String director;
-    private ArrayList<String> cast;
+    private List<String> cast;
 
     public String getTitle() {
         return title;
@@ -32,7 +39,21 @@ public class Movie {
         return director;
     }
 
-    public ArrayList<String> getCast() {
+    public List<String> getCast() {
         return cast;
+    }
+
+    //Returns equality check based on year made and title.
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+
+        if (!(o instanceof Movie))
+            return false;
+
+        Movie movie = (Movie) o;
+
+        return (movie.getTitle().equals(title) && movie.getYearMade().equals(yearMade));
     }
 }
