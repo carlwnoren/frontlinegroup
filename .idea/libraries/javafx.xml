@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javafx" type="kotlin.js">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/javafx-sdk-19.0.2.1/src/javafx.controls" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
